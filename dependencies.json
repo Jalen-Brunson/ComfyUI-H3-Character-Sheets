@@ -1,0 +1,57 @@
+{
+  "checked_on": "2026-10-17",
+  "core": {
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "required_nodes": [
+      "MiniMaxH3SigmaShift",
+      "ResolutionSelector",
+      "PrimitiveStringMultiline"
+    ]
+  },
+  "custom_nodes": [
+    {
+      "url": "https://github.com/Jalen-Brunson/ComfyUI-H3-Character-Sheets",
+      "nodes": [
+        "H3Subjects",
+        "H3RefSlots",
+        "H3ImagePromptCompose"
+      ],
+      "source": "this repository"
+    },
+    {
+      "url": "https://github.com/ckinpdx/ComfyUI-MMH3Tools",
+      "commit": "031bb909061355d6d273dac6fe57601cf8a0197a",
+      "nodes": [
+        "MMH3ImageList",
+        "MMH3ReferenceMultiPrompt",
+        "MMH3CondSelect"
+      ],
+      "anonymous_access_verified": true
+    },
+    {
+      "url": "https://github.com/scottmudge/ComfyUI_MinimaxH3HybridLoader",
+      "commit": "a44c69b02242e41fbd01e22abe2a492adc853038",
+      "nodes": [
+        "MiniMaxH3HybridLoader"
+      ],
+      "anonymous_access_verified": true
+    },
+    {
+      "url": "https://github.com/shootthesound/ComfyUI-Fizgig-H3-Still",
+      "commit": "10d5171f6e45b0757a03df977f53a660e060c33d",
+      "nodes": [
+        "FizgigH3StillLatent",
+        "FizgigH3StillDecode"
+      ],
+      "anonymous_access_verified": true
+    },
+    {
+      "url": "https://github.com/yolain/ComfyUI-Easy-Use",
+      "commit": "4ba22aa1ec2dd606995574d93d70c6c8a3744859",
+      "nodes": [
+        "easy anythingIndexSwitch"
+      ],
+      "anonymous_access_verified": true
+    }
+  ]
+}
