@@ -18,7 +18,7 @@ git clone https://github.com/yolain/ComfyUI-Easy-Use.git
 Use ComfyUI Manager or each pack’s README to install that pack’s Python requirements using the same Python environment as ComfyUI. Clone only missing packs. If a local `vlm_video_prompt` already registers these three builder IDs, it already provides the compatible builder interface; avoid maintaining two different implementations of the same node IDs. The public version of that older repository does not currently contain these builders.
 
 
-## START HERE - H3 Character Sheets / Fizgig
+## START HERE - H3 Character Sheets
 
 ### One character, one generated sheet
 1. Install the packs listed in **Dependencies** and select your model files.
