@@ -61,8 +61,6 @@ Use current ComfyUI with native H3, Resolution Selector and Text (Multiline). No
 
 The README has exact filenames and folders. No weights or personal reference images are included. Upload placeholders must be replaced before running.
 
-## Saved recipe and public default
-
 ### Recipe
 2.5 MP / 21:9 / multiple 32; ER-SDE, simple, 5-25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.
 
