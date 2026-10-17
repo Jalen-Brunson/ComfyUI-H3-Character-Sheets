@@ -2,6 +2,14 @@
 
 A ComfyUI workflow for turning 1–9 references into one character sheet, with a standalone deterministic prompt-binding pack.
 
+## Examples
+
+Ten original fictional characters — **five women and five men** — across six sheet layouts.
+
+[![Ten character-sheet examples with input portraits beside the generated sheets](examples/previews/overview.jpg)](examples/README.md)
+
+[Browse all ten examples](examples/README.md) · [Full-resolution sheets](examples/sheets) · [Input portraits](examples/references) · [Hugging Face page](https://huggingface.co/aptech0081/H3-Character-Sheet-Creator)
+
 ## Install
 
 Clone this repository into `ComfyUI/custom_nodes/ComfyUI-H3-Character-Sheets`. It registers only `H3Subjects`, `H3RefSlots` and `H3ImagePromptCompose`; it has no extra Python dependencies and does not download or load a VLM. Install the other four packs linked below, restart ComfyUI, then open the JSON in `example_workflows`.
