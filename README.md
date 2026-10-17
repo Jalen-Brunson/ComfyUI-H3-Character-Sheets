@@ -1,4 +1,4 @@
-# H3 Character Sheets — Fizgig
+# H3 Character Sheets
 
 A ComfyUI workflow for turning 1–9 references into one character sheet, with a standalone deterministic prompt-binding pack.
 
@@ -66,11 +66,9 @@ The README has exact filenames and folders. No weights or personal reference ima
 ## Saved recipe and public default
 
 ### Recipe
-2.5 MP / 21:9 / multiple 32; ER-SDE, simple, 25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.
+2.5 MP / 21:9 / multiple 32; ER-SDE, simple, 5-25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.
 
-The public copy selects the downloadable **stock Ref2VA overlay**. The source used a locally prepared AdaLN-rebased overlay. This changes model behavior; use your rebased file to reproduce that model choice.
-
-The original workflow remains separate. This release removes the duplicate prompt composition and duplicate reference wiring.
+Select the downloadable **stock Ref2VA overlay**. 
 
 ## 01 - choose and load reference images
 
@@ -85,11 +83,8 @@ Do not feed the same picture into two slots by accident. Each uploaded image is 
 
 ## When an input is already a character sheet
 
-Use **face sheet** for a multi-view face-only reference; use **character sheet** for a sheet containing face, hair, outfit and body information. Use **face (primary)** for a single face photo.
+Use **face sheet** for a multi-view face-only reference; use **character sheet** for a sheet containing face, hair, outfit and body information. Use **face (primary)** for a single face photo where you want to lock that face as the primary.
 
-These roles describe the INPUT. They do not select an OUTPUT layout.
-
-Use only a sheet with the correct identity, consistent styling, useful angles and intact framing. Conflicting identities or inconsistent clothing across its panels make it a poor reference.
 
 ## 02 - prompt binding instructions
 
@@ -192,25 +187,5 @@ Download the following from [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-
 | `vae` | `minimax_h3_video_vae_int8_convrot.safetensors` |
 | `vae` | `minimax_h3_audio_vae_fp32.safetensors` |
 
-Download [DMAD rank 39 bf16](https://huggingface.co/Kijai/MiniMax-H3-experimental/blob/main/loras/minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors) into `ComfyUI/models/loras/minimax/`. Select another installed location in the LoRA node if needed. The public workflow uses the stock downloadable Ref2VA overlay; the source used `minimax_h3_ref2va_adalnrebased_int8_convrot.safetensors`. The resulting model choice is different and visual equivalence is not claimed.
+Download [DMAD rank 39 bf16](https://huggingface.co/Kijai/MiniMax-H3-experimental/blob/main/loras/minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors) into `ComfyUI/models/loras/minimax/`. 
 
-## What was cleaned up
-
-- Removed the orphaned alternative UNET loader, bypassed VLM description branch, bypassed stock decode comparison, bypassed tweaks node, and per-reference resizing branches.
-- Replaced seven competing prompt composers with seven plain-text templates and one final composer. A composed H3 prompt is never composed a second time.
-- Removed the duplicate reference connection; active pictures now map one-to-one to slots 1–9.
-- Kept all seven original template designs, including the previously shadowed five-panel full-body description; generalized them to one character and aligned the three-column template with the 21:9 canvas.
-- Replaced personal filenames/descriptions with upload placeholders and editable neutral defaults; fixed seed 42; grouped and spaced nodes with title-bar clearance.
-- Preserved the Fizgig one-frame latent and tiled still decode path. Empty optional sockets and the conditioning node’s unused latent output are intentional; instructional notes do not have data links.
-
-## Provenance
-
-The three builder classes and the pure-Python formatter are extracted from the local H3 builder implementation in Jalen-Brunson/vlm_video_prompt. Existing class IDs and widget order are preserved. Unrelated video, VLM and file-management nodes are excluded. Runtime behavior remains deterministic string composition. The workflow depends on the separately maintained public packs linked above; those packs and model weights are not bundled here.
-
-## Validation
-
-Checked in ComfyUI on 2026-10-17: all seven sheet choices exported correctly with 1, 3 and 9 active references (21 combinations), with no missing node types or browser JavaScript errors. Actual browser node dimensions have no overlaps, including title bars. The five automated tests cover graph integrity, output reachability, layout, picture-role composition and the Fizgig latent path. These checks do not render an image; upload your own references before running.
-
-ComfyUI's backend prompt validator also accepted all 21 combinations on CPU using temporary synthetic input images. No model weights were loaded and no generation was queued.
-
-Run the deterministic tests with `python -m unittest discover -s tests` from this repository.
