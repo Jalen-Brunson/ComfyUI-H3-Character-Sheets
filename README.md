@@ -211,4 +211,6 @@ The three builder classes and the pure-Python formatter are extracted from the l
 
 Checked in ComfyUI on 2026-10-17: all seven sheet choices exported correctly with 1, 3 and 9 active references (21 combinations), with no missing node types or browser JavaScript errors. Actual browser node dimensions have no overlaps, including title bars. The five automated tests cover graph integrity, output reachability, layout, picture-role composition and the Fizgig latent path. These checks do not render an image; upload your own references before running.
 
+ComfyUI's backend prompt validator also accepted all 21 combinations on CPU using temporary synthetic input images. No model weights were loaded and no generation was queued.
+
 Run the deterministic tests with `python -m unittest discover -s tests` from this repository.
