@@ -12,15 +12,15 @@ Eleven sheets featuring ten original fictional characters — **five women and f
 
 ## Preset 7 — four heads above front, top and rear body views
 
-**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `27111`
+**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `42`
 
-Four head portraits run across the top. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
+The top row reads left to right: **front, three-quarter facing left, profile facing right, three-quarter facing right**. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
 
 [![Lin in the new seven-view character sheet](examples/previews/11_lin_seven_view_turnaround_sheet.jpg)](examples/sheets/11_lin_seven_view_turnaround.png)
 
 [Full-resolution sheet](examples/sheets/11_lin_seven_view_turnaround.png) · [Input portrait](examples/references/02_lin_orbital_pilot.png) · [Prompt](examples/prompts/11_lin_seven_view_turnaround_sheet.txt)
 
-The fourth portrait remains close to frontal in this unretouched output; head angles can vary by seed.
+This unretouched sample uses the revised concise prompt at seed **42**. Head angles can vary with the reference and seed.
 
 ## Install
 
@@ -143,6 +143,8 @@ If the wrong face/outfit appears, compare the active image order with pic_N role
 
 Set **Canvas size → aspect_ratio** to the value above after choosing a preset. **Changing CHOOSE SHEET does not change the canvas automatically.** Keep megapixels at **2.5** and multiple at **32** as a starting point. Preset 6 is editable free text: use 3:4 for its default single portrait, or choose a ratio that fits your custom composition. The saved workflow selects preset 7 and 3:4 portrait.
 
+Preset **7** top row, left to right: **front → three-quarter facing left → profile facing right → three-quarter facing right**. Directions refer to the image edges. Below: front body cropped at the collar, overhead body, complete rear body. Use **3:4 (Portrait Standard)**.
+
 Only the selected description is used. Edit its matching numbered text node below. Values 8-9 have no template; use 0-7.
 
 ## 04 - model setup
@@ -179,7 +181,7 @@ Before reusing a result, check EVERY panel:
 - Profile is a true 90-degree view with the far eye hidden.
 - Full hairstyle fits in headshots; hands and feet fit in body views.
 - Similar head size and lighting across the headshots.
-- The neck-to-feet crop is intentional only for options 3 and 5.
+- The neck-to-feet crop is intentional only for options 3, 5 and 7.
 
 Try another seed if a panel drifts. A simpler 2- or 3-view sheet can be more useful than a crowded sheet with inconsistent identity.
 

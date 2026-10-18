@@ -10,15 +10,15 @@ Layouts 3, 5 and 7 intentionally crop the front body panel from the neck down.
 
 ## Preset 7 — four heads above front, top and rear body views
 
-**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `27111`
+**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `42`
 
-Four head portraits run across the top. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
+The top row reads left to right: **front, three-quarter facing left, profile facing right, three-quarter facing right**. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
 
 [![Lin in the new seven-view character sheet](previews/11_lin_seven_view_turnaround_sheet.jpg)](sheets/11_lin_seven_view_turnaround.png)
 
 [Full-resolution sheet](sheets/11_lin_seven_view_turnaround.png) · [Input portrait](references/02_lin_orbital_pilot.png) · [Prompt](prompts/11_lin_seven_view_turnaround_sheet.txt)
 
-The fourth portrait remains close to frontal in this unretouched output; head angles can vary by seed.
+This unretouched sample uses the revised concise prompt at seed **42**. Head angles can vary with the reference and seed.
 
 This unretouched sample uses the public stock `minimax_h3_ref2va_int8_convrot.safetensors` overlay with the FL2VA base, **2.5 MP · 25 steps · ER-SDE · simple · CFG 1 · DMAD 0.8 · sigma shift 16/2**. It reuses the original Lin portrait. To reproduce it, load that portrait into Picture 1, select **face + hair**, copy the character description from the linked prompt into BIND 1, and use preset 7 with the seed above. Per-sample model settings are recorded in the metadata.
 
