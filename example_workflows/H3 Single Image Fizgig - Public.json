@@ -1,8 +1,8 @@
 {
   "id": "f7455c97-27cf-562f-8a8e-6ec86c5dcaa6",
   "revision": 0,
-  "last_node_id": 6115,
-  "last_link_id": 43,
+  "last_node_id": 6116,
+  "last_link_id": 44,
   "nodes": [
     {
       "id": 4,
@@ -864,14 +864,14 @@
           ]
         }
       ],
-      "title": "Canvas size - both H3 paths share these dimensions",
+      "title": "Canvas size - match aspect_ratio to the selected preset",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.34.0",
         "Node name for S&R": "ResolutionSelector"
       },
       "widgets_values": [
-        "21:9 (Ultrawide)",
+        "3:4 (Portrait Standard)",
         2.5,
         32
       ]
@@ -1123,7 +1123,7 @@
     {
       "id": 5910,
       "type": "PrimitiveStringMultiline",
-      "title": "1 - 7 panels: angles + expressions + full body",
+      "title": "1 - [21:9] 7 panels: angles + expressions + full body",
       "pos": [
         980,
         3080
@@ -1165,7 +1165,7 @@
     {
       "id": 5911,
       "type": "PrimitiveStringMultiline",
-      "title": "2 - 6 panels: angles + expressions",
+      "title": "2 - [3:2] 6 panels: angles + expressions",
       "pos": [
         1920,
         3080
@@ -1207,7 +1207,7 @@
     {
       "id": 5912,
       "type": "PrimitiveStringMultiline",
-      "title": "4 - 2 panels: front + profile",
+      "title": "4 - [3:2] 2 panels: front + profile",
       "pos": [
         3800,
         3080
@@ -1249,7 +1249,7 @@
     {
       "id": 5913,
       "type": "PrimitiveStringMultiline",
-      "title": "3 - 5 panels: four faces + neck-to-feet crop",
+      "title": "3 - [21:9] 5 panels: four faces + neck-to-feet crop",
       "pos": [
         2860,
         3080
@@ -1291,7 +1291,7 @@
     {
       "id": 5916,
       "type": "PrimitiveStringMultiline",
-      "title": "6 - Free text: single portrait / custom sheet",
+      "title": "6 - [3:4] Free text: single portrait / custom sheet",
       "pos": [
         5680,
         3080
@@ -1333,7 +1333,7 @@
     {
       "id": 5917,
       "type": "PrimitiveStringMultiline",
-      "title": "5 - 3 columns: front + profile + body crop",
+      "title": "5 - [21:9] 3 columns: front + profile + body crop",
       "pos": [
         4740,
         3080
@@ -1343,7 +1343,7 @@
         800
       ],
       "flags": {},
-      "order": 21,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -1384,7 +1384,7 @@
         380
       ],
       "flags": {},
-      "order": 22,
+      "order": 23,
       "mode": 4,
       "inputs": [
         {
@@ -1436,7 +1436,7 @@
     {
       "id": 6001,
       "type": "PrimitiveStringMultiline",
-      "title": "0 - 5 panels: four faces + full body",
+      "title": "0 - [21:9] 5 panels: four faces + full body",
       "pos": [
         40,
         3080
@@ -1446,7 +1446,7 @@
         800
       ],
       "flags": {},
-      "order": 23,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -1488,13 +1488,13 @@
         400
       ],
       "flags": {},
-      "order": 24,
+      "order": 25,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "## One character, one generated sheet\n1. Install the packs listed in **Dependencies** and select your model files.\n2. Upload **Picture 1**. Describe the character in **BIND 1**.\n3. In **BIND 2**, match each active picture to its role.\n4. Set **CHOOSE SHEET** to **0-6**. Start with **0: five panels + full body**.\n5. Run. Inspect identity, profile, framing and clothing before keeping a sheet.\n\nRead left to right. The seven editable sheet descriptions are below the main flow.\n“Single image” means one output image; you can supply 1-9 references."
+        "## One character, one generated sheet\n1. Install the packs listed in **Dependencies** and select your model files.\n2. Upload **Picture 1**. Describe the character in **BIND 1**.\n3. In **BIND 2**, match each active picture to its role.\n4. Set **CHOOSE SHEET** to **0-7**. **7: four heads above front / top / rear body** is selected for testing.\n5. Set **Canvas size → aspect_ratio** using the preset ratio table, then run. Inspect identity, profile, framing and clothing before keeping a sheet.\n\nRead left to right. The eight editable sheet descriptions are below the main flow.\n“Single image” means one output image; you can supply 1-9 references."
       ],
       "color": "#243746",
       "bgcolor": "#172633"
@@ -1512,13 +1512,13 @@
         400
       ],
       "flags": {},
-      "order": 25,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "## Three different numbers\n**Subject 1** = the ONE character being depicted, even across many panels.\n\n**Picture 1-9** = the active uploaded reference images in list order.\n\n**Sheet index 0-6** = the desired output layout. It does not choose a reference.\n\n`H3Subjects → H3RefSlots → H3ImagePromptCompose`\n\nIdentity + picture roles + ONE raw sheet description become ONE structured H3 prompt. The final prompt connects directly to conditioning and its preview."
+        "## Three different numbers\n**Subject 1** = the ONE character being depicted, even across many panels.\n\n**Picture 1-9** = the active uploaded reference images in list order.\n\n**Sheet index 0-7** = the desired output layout. It does not choose a reference.\n\n`H3Subjects → H3RefSlots → H3ImagePromptCompose`\n\nIdentity + picture roles + ONE raw sheet description become ONE structured H3 prompt. The final prompt connects directly to conditioning and its preview."
       ],
       "color": "#243746",
       "bgcolor": "#172633"
@@ -1536,7 +1536,7 @@
         400
       ],
       "flags": {},
-      "order": 26,
+      "order": 27,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1560,7 +1560,7 @@
         400
       ],
       "flags": {},
-      "order": 27,
+      "order": 28,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1584,13 +1584,13 @@
         400
       ],
       "flags": {},
-      "order": 28,
+      "order": 29,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "## Recipe\n2.5 MP / 21:9 / multiple 32; ER-SDE, simple, 25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.\n\nThe public copy selects the downloadable **stock Ref2VA overlay**. The source used a locally prepared AdaLN-rebased overlay. This changes model behavior; use your rebased file to reproduce that model choice.\n\nThe original workflow remains separate. This release removes the duplicate prompt composition and duplicate reference wiring."
+        "## Recipe\n2.5 MP / 3:4 portrait (preset 7) / multiple 32; ER-SDE, simple, 25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.\n\nThe public copy selects the downloadable **stock Ref2VA overlay**. The source used a locally prepared AdaLN-rebased overlay. This changes model behavior; use your rebased file to reproduce that model choice.\n\nThe original workflow remains separate. This release removes the duplicate prompt composition and duplicate reference wiring."
       ],
       "color": "#243746",
       "bgcolor": "#172633"
@@ -1608,7 +1608,7 @@
         360
       ],
       "flags": {},
-      "order": 29,
+      "order": 30,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1632,7 +1632,7 @@
         320
       ],
       "flags": {},
-      "order": 30,
+      "order": 31,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1656,7 +1656,7 @@
         500
       ],
       "flags": {},
-      "order": 31,
+      "order": 32,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1680,7 +1680,7 @@
         680
       ],
       "flags": {},
-      "order": 32,
+      "order": 33,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1704,13 +1704,13 @@
         700
       ],
       "flags": {},
-      "order": 33,
+      "order": 34,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "## CHOOSE SHEET uses a zero-based index\n| Index | Output | Choose it for |\n| --- | --- | --- |\n| **0** | 5 panels: four faces + full body | General-purpose reference; start here |\n| **1** | 7 panels: six faces + full body | Angles, smile/anger/sadness, and outfit |\n| **2** | 6 headshots, 2 × 3 | Face identity and expression coverage |\n| **3** | 5 panels: four faces + neck-to-feet | Larger body/clothing detail |\n| **4** | 2 headshots: front + profile | Simple likeness/profile check |\n| **5** | 3 columns: front + profile + body crop | Large views in one ultrawide row |\n| **6** | Free text (starts as one portrait) | A custom composition or quick portrait |\n\nOnly the selected description is used. Edit its matching numbered text node below. Values 7-9 have no template; use 0-6.\n\nThe saved canvas is 21:9. Try 3:2 for six heads, 2:3 for one portrait; keep 21:9 for the three-column template. Changing the index does NOT change resolution."
+        "## Sheet presets and recommended canvas ratios\n\n| Index | Output layout | Recommended aspect ratio setting |\n| --- | --- | --- |\n| **0** | Four faces + full body | **21:9 (Ultrawide)** |\n| **1** | Six faces + full body | **21:9 (Ultrawide)** |\n| **2** | Six headshots / expressions | **3:2 (Photo)** |\n| **3** | Four faces + neck-to-feet crop | **21:9 (Ultrawide)** |\n| **4** | Front + profile headshots | **3:2 (Photo)** |\n| **5** | Three columns: front + profile + body crop | **21:9 (Ultrawide)** |\n| **6** | Free text / single portrait | **3:4 (Portrait Standard)**; for the default portrait |\n| **7** | Four heads above front crop + top-down + rear body | **3:4 (Portrait Standard)** |\n\nSet **Canvas size → aspect_ratio** to the value above after choosing a preset. **Changing CHOOSE SHEET does not change the canvas automatically.** Keep megapixels at **2.5** and multiple at **32** as a starting point. Preset 6 is editable free text: use 3:4 for its default single portrait, or choose a ratio that fits your custom composition. The saved workflow selects preset 7 and 3:4 portrait.\n\nOnly the selected description is used. Edit its matching numbered text node below. Values 8-9 have no template; use 0-7."
       ],
       "color": "#243746",
       "bgcolor": "#172633"
@@ -1728,7 +1728,7 @@
         500
       ],
       "flags": {},
-      "order": 34,
+      "order": 35,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1752,7 +1752,7 @@
         450
       ],
       "flags": {},
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1776,7 +1776,7 @@
         350
       ],
       "flags": {},
-      "order": 36,
+      "order": 37,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1800,7 +1800,7 @@
         350
       ],
       "flags": {},
-      "order": 37,
+      "order": 38,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1824,13 +1824,13 @@
         630
       ],
       "flags": {},
-      "order": 38,
+      "order": 39,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "PNG files are written beneath `ComfyUI/output/h3_character_sheets/` and shown in Save Image. The saved PNG includes workflow metadata.\n\nInspect **Final H3 prompt** after a run. Expect one subject_definitions section and one detailed_description section, with Picture tags matching your active inputs.\n\nMissing nodes: install all five packs and restart ComfyUI. Missing model: select an installed filename. Missing image: upload Picture 1 and every enabled optional image. Wrong layout: check sheet index 0-6 and the corresponding template.\n\nUse plain text in descriptions. Avoid literal pipe characters: MMH3Tools treats a pipe as a separator between multiple prompts."
+        "PNG files are written beneath `ComfyUI/output/h3_character_sheets/` and shown in Save Image. The saved PNG includes workflow metadata.\n\nInspect **Final H3 prompt** after a run. Expect one subject_definitions section and one detailed_description section, with Picture tags matching your active inputs.\n\nMissing nodes: install all five packs and restart ComfyUI. Missing model: select an installed filename. Missing image: upload Picture 1 and every enabled optional image. Wrong layout: check sheet index 0-7 and the corresponding template.\n\nUse plain text in descriptions. Avoid literal pipe characters: MMH3Tools treats a pipe as a separator between multiple prompts."
       ],
       "color": "#243746",
       "bgcolor": "#172633"
@@ -1847,7 +1847,7 @@
         110
       ],
       "flags": {},
-      "order": 39,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -1908,7 +1908,7 @@
         320
       ],
       "flags": {},
-      "order": 40,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -2003,7 +2003,7 @@
         1500
       ],
       "flags": {},
-      "order": 41,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -2459,7 +2459,7 @@
         150
       ],
       "flags": {},
-      "order": 42,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -2522,51 +2522,51 @@
       ],
       "size": [
         540,
-        260
+        300
       ],
       "flags": {},
-      "order": 43,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
           "name": "value0",
-          "label": "0: 5 panels: four faces + full body",
+          "label": "0: [21:9] Four faces + full body",
           "type": "*",
           "link": 12
         },
         {
           "name": "value1",
-          "label": "1: 7 panels: angles + expressions + full body",
+          "label": "1: [21:9] Six faces + full body",
           "type": "*",
           "link": 13
         },
         {
           "name": "value2",
-          "label": "2: 6 panels: angles + expressions",
+          "label": "2: [3:2] Six headshots / expressions",
           "type": "*",
           "link": 14
         },
         {
           "name": "value3",
-          "label": "3: 5 panels: four faces + neck-to-feet crop",
+          "label": "3: [21:9] Four faces + neck-to-feet crop",
           "type": "*",
           "link": 15
         },
         {
           "name": "value4",
-          "label": "4: 2 panels: front + profile",
+          "label": "4: [3:2] Front + profile headshots",
           "type": "*",
           "link": 16
         },
         {
           "name": "value5",
-          "label": "5: 3 columns: front + profile + body crop",
+          "label": "5: [21:9] Three columns: front + profile + body crop",
           "type": "*",
           "link": 17
         },
         {
           "name": "value6",
-          "label": "6: Free text: single portrait / custom sheet",
+          "label": "6: [3:4] Free text / single portrait",
           "type": "*",
           "link": 18
         },
@@ -2577,6 +2577,12 @@
             "name": "index"
           },
           "link": null
+        },
+        {
+          "name": "value7",
+          "type": "*",
+          "link": 44,
+          "label": "7: [3:4] Four heads above front crop + top-down + rear body"
         }
       ],
       "outputs": [
@@ -2596,9 +2602,9 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        0
+        7
       ],
-      "title": "CHOOSE SHEET - index 0 to 6 (default 0)"
+      "title": "CHOOSE SHEET - index 0 to 7 (7 selected)"
     },
     {
       "id": 3,
@@ -2612,7 +2618,7 @@
         110
       ],
       "flags": {},
-      "order": 44,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -2674,7 +2680,7 @@
         300
       ],
       "flags": {},
-      "order": 45,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -2752,7 +2758,7 @@
         150
       ],
       "flags": {},
-      "order": 46,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -2823,7 +2829,7 @@
         800
       ],
       "flags": {},
-      "order": 47,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -3060,7 +3066,7 @@
         360
       ],
       "flags": {},
-      "order": 48,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -3098,7 +3104,7 @@
         240
       ],
       "flags": {},
-      "order": 49,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -3155,7 +3161,7 @@
         90
       ],
       "flags": {},
-      "order": 50,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -3200,7 +3206,7 @@
         380
       ],
       "flags": {},
-      "order": 51,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -3270,7 +3276,7 @@
         120
       ],
       "flags": {},
-      "order": 52,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -3316,7 +3322,7 @@
         700
       ],
       "flags": {},
-      "order": 53,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -3352,6 +3358,48 @@
         "h3_character_sheets/sheet"
       ],
       "title": "Save character sheet PNG"
+    },
+    {
+      "id": 6116,
+      "type": "PrimitiveStringMultiline",
+      "title": "7 - [3:4] 4 heads above front crop + top-down + rear body",
+      "pos": [
+        6620,
+        3080
+      ],
+      "size": [
+        880,
+        800
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "Photographic character reference sheet of ONE character, <Subject 1>.\n\nCANVAS AND LAYOUT:\nPortrait 3:4 canvas with EXACTLY SEVEN separate views on one continuous plain light-grey studio background. Arrange FOUR head portraits in one compact horizontal row across the TOP, taking approximately the upper 28 percent of the sheet. Below them, arrange THREE body views side by side across the remaining height: NECK-TO-FEET FRONT CROP on the left, TOP-DOWN BODY in the centre, REAR BODY on the right. The four top columns and three bottom columns are independent; their vertical divisions do not align. Use narrow, even gaps and small outer margins, with no drawn boxes, visible panel borders, text or labels. Each view depicts the SAME character.\n\nTOP ROW - FOUR COMPLETE HEAD PORTRAITS, LEFT TO RIGHT:\nAll four portraits show the entire head, complete hairstyle, ears, chin, neck and upper shoulders. Match head size, eye height, lighting and neutral facial expression across the row. Fit the widest head-and-hair silhouette first, then use that shared scale in every portrait. Leave a small clear margin around the complete hair and nose silhouette. The head remains upright and level.\n\n1 - FRONT: Face directly toward the camera, both eyes equally visible, neutral expression.\n2 - THREE-QUARTER LEFT: Turn 45 degrees toward the LEFT edge of the sheet. Both eyes remain visible, with the farther side of the face narrower.\n3 - STRICT RIGHT PROFILE: Turn a full 90 degrees toward the RIGHT edge of the sheet, nose pointing right. Show only the near eye and cheek; the far eye is hidden. Include the complete forehead, crown, back of the skull, hairstyle, nose and chin inside the portrait.\n4 - THREE-QUARTER RIGHT: The head AND shoulders rotate 45 degrees toward the RIGHT edge of the sheet. The nose points diagonally right, with one cheek visibly broader than the other. Both eyes are visible, but the far eye is narrower. This angle is the opposite of portrait 2 and halfway between portrait 1 and portrait 3. Do not repeat the front-facing portrait: the face is visibly turned toward the right.\n\nBOTTOM LEFT - CLOSE NECK-TO-FEET FRONT CROP, HEAD OUTSIDE THE FRAME:\nThis panel is a clothing-and-body detail photograph. Its TOP EDGE cuts across the base of the neck at the shirt collar, and its BOTTOM EDGE sits just beneath the boots. Place the collar exactly against the horizontal boundary directly under the four head portraits. Enlarge the body until the distance from the collar to the soles fills the entire lower-row height. The head, hair above the neck, face and chin are entirely ABOVE this panel's top edge and are NOT shown here. There is NO head-shaped empty space above the shoulders: the collar touches the top boundary, the shoulders enter immediately beneath it, and both boots nearly touch the bottom boundary. Use a normal camera crop, with natural intact anatomy extending out of frame. Show the complete shoulders, torso, arms, hands, legs and feet facing straight toward the camera. Arms hang slightly away from the torso; hands are visible and feet are slightly apart. The FRONT body is enlarged independently of the rear view so that its neck-to-feet crop fills the same height that the rear head-to-feet view fills. Long hair below the crop may remain on the shoulders. Do not include a small full-length front-facing person in this panel.\n\nBOTTOM CENTRE - TRUE TOP-DOWN BODY VIEW:\nShow the SAME standing character from a camera directly ABOVE them, looking vertically DOWN toward the floor. This is a genuine overhead view of the whole character, including the crown of the head, shoulders, upper surfaces of the arms and hands, torso, legs and both feet as visible from above. The character's front and toes point toward the BOTTOM edge of the sheet. Preserve the same relaxed standing posture and clothing as the adjacent body views. The face points forward beneath the brow, not up at the overhead camera. Allow natural overhead foreshortening and occlusion; do not stretch the body to look like a frontal view. Keep the complete projected silhouette, hands and feet inside the centre area. Centre this shorter overhead silhouette vertically within the lower row. It is a standing figure viewed from above, not a bent-over, crouching, crawling or lying-down pose, and not merely a close-up of the crown.\n\nBOTTOM RIGHT - COMPLETE REAR BODY VIEW:\nShow the character standing with their back directly toward the camera, facing away, without turning their head or looking over a shoulder. Include the back of the entire head and hairstyle, neck, shoulders, back, arms, hands, clothing, legs and both feet. Use the same relaxed stance and natural proportions as the front body. Fill nearly the full lower-row height, leaving a small margin above the hair and below the feet. The face is not visible in this view. Unlike the front body crop, this rear view INCLUDES the head.\n\nCONSISTENCY AND FINISH:\nPreserve one facial identity, hairline, hairstyle, skin tone, build, anatomy, clothing, footwear, jewelry and distinguishing features across all seven views. Repeated views are reference images of one character, not a group of people interacting. Use soft even studio lighting, sharp photographic detail, consistent colour and a uniform plain light-grey background. The head portraits use their own larger scale. Each lower view uses the scale needed to fit its complete requested silhouette; preserve natural proportions and overhead foreshortening. Keep views separate with clear background between them. The lower-left view MUST start at the collar, with no visible head or face; its collar and shoulders meet the top of the lower row. Exactly four heads above exactly three body views; no extra portraits, figures, inset panels, props, scenery, labels, watermarks or overlapping views.\n"
+      ]
     }
   ],
   "links": [
@@ -3698,6 +3746,14 @@
       19,
       0,
       "IMAGE"
+    ],
+    [
+      44,
+      6116,
+      0,
+      5915,
+      8,
+      "STRING"
     ]
   ],
   "groups": [
@@ -3787,11 +3843,11 @@
     },
     {
       "id": 8,
-      "title": "TEMPLATE LIBRARY / edit the description matching sheet index 0-6 above",
+      "title": "TEMPLATE LIBRARY / edit the description matching sheet index 0-7 above",
       "bounding": [
         0,
         2960,
-        6580,
+        7520,
         980
       ],
       "color": "#635584",

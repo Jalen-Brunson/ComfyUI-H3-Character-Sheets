@@ -66,8 +66,8 @@ class PublicWorkflowTests(unittest.TestCase):
         subject_text = subjects.build(**widget_args(NODES[26]))[0]
         template_links = {NODES[5915]['inputs'][ts]['name']: s
                           for _, s, _, t, ts, _ in FLOW['links'] if t == 5915}
-        self.assertEqual(set(template_links), {f'value{i}' for i in range(7)})
-        for count, index in itertools.product((1, 3, 9), range(7)):
+        self.assertEqual(set(template_links), {f'value{i}' for i in range(8)})
+        for count, index in itertools.product((1, 3, 9), range(8)):
             with self.subTest(references=count, sheet=index):
                 args = widget_args(NODES[27])
                 for i in range(1, 10):
@@ -115,7 +115,8 @@ class PublicWorkflowTests(unittest.TestCase):
             for name in ('width', 'height'):
                 slot = next(s for s in NODES[target]['inputs'] if s['name'] == name)
                 self.assertEqual(links[slot['link']][1], 30)
-        self.assertEqual(NODES[5915]['widgets_values'], [0])
+        self.assertEqual(NODES[5915]['widgets_values'], [7])
+        self.assertEqual(NODES[30]['widgets_values'][0], '3:4 (Portrait Standard)')
         self.assertEqual(NODES[30]['widgets_values'][-1], 32)
 
 

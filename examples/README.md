@@ -1,12 +1,26 @@
 # Character sheet examples
 
-Ten original fictional characters: **five women and five men**, shown across six sheet layouts. These are the existing unretouched outputs from the H3 Character Sheet Creator sample batch.
+Eleven unretouched sheets featuring ten original fictional characters: **five women and five men**, now shown across seven sheet layouts. Preset 7 adds a second sheet of Lin using the existing reference portrait.
 
 [Workflow guide](../README.md) · [Public workflow](../example_workflows/H3%20Single%20Image%20Fizgig%20-%20Public.json) · [Sample settings](metadata.json) · [Hugging Face page](https://huggingface.co/aptech0081/H3-Character-Sheet-Creator)
 
 Each character has a full-resolution sheet, its generated input portrait, prompts, and fixed seeds. The reference portraits were supplied as **face + hair**; body and clothing were specified in the subject description. Exact model settings are in [metadata.json](metadata.json).
 
-Layouts 3 and 5 intentionally crop the body panel from the neck down.
+Layouts 3, 5 and 7 intentionally crop the front body panel from the neck down.
+
+## Preset 7 — four heads above front, top and rear body views
+
+**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `27111`
+
+Four head portraits run across the top. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
+
+[![Lin in the new seven-view character sheet](previews/11_lin_seven_view_turnaround_sheet.jpg)](sheets/11_lin_seven_view_turnaround.png)
+
+[Full-resolution sheet](sheets/11_lin_seven_view_turnaround.png) · [Input portrait](references/02_lin_orbital_pilot.png) · [Prompt](prompts/11_lin_seven_view_turnaround_sheet.txt)
+
+The fourth portrait remains close to frontal in this unretouched output; head angles can vary by seed.
+
+This unretouched sample uses the public stock `minimax_h3_ref2va_int8_convrot.safetensors` overlay with the FL2VA base, **2.5 MP · 25 steps · ER-SDE · simple · CFG 1 · DMAD 0.8 · sigma shift 16/2**. It reuses the original Lin portrait. To reproduce it, load that portrait into Picture 1, select **face + hair**, copy the character description from the linked prompt into BIND 1, and use preset 7 with the seed above. Per-sample model settings are recorded in the metadata.
 
 ## Five panels — four faces and full body
 

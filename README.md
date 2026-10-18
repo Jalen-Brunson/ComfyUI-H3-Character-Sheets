@@ -4,11 +4,23 @@ A ComfyUI workflow for turning 1–9 references into one character sheet, with a
 
 ## Examples
 
-Ten original fictional characters — **five women and five men** — across six sheet layouts.
+Eleven sheets featuring ten original fictional characters — **five women and five men** — across seven sheet layouts.
 
 [![Ten character-sheet examples with input portraits beside the generated sheets](examples/previews/overview.jpg)](examples/README.md)
 
-[Browse all ten examples](examples/README.md) · [Full-resolution sheets](examples/sheets) · [Input portraits](examples/references) · [Hugging Face page](https://huggingface.co/aptech0081/H3-Character-Sheet-Creator)
+[Browse all eleven sheets](examples/README.md) · [Full-resolution sheets](examples/sheets) · [Input portraits](examples/references) · [Hugging Face page](https://huggingface.co/aptech0081/H3-Character-Sheet-Creator)
+
+## Preset 7 — four heads above front, top and rear body views
+
+**Lin — orbital pilot** · 1408 × 1856 · sheet index `7` · seed `27111`
+
+Four head portraits run across the top. Below are a front body crop from the neck to the feet, a top-down body view, and a complete rear view including the head. The canvas is **3:4 portrait**.
+
+[![Lin in the new seven-view character sheet](examples/previews/11_lin_seven_view_turnaround_sheet.jpg)](examples/sheets/11_lin_seven_view_turnaround.png)
+
+[Full-resolution sheet](examples/sheets/11_lin_seven_view_turnaround.png) · [Input portrait](examples/references/02_lin_orbital_pilot.png) · [Prompt](examples/prompts/11_lin_seven_view_turnaround_sheet.txt)
+
+The fourth portrait remains close to frontal in this unretouched output; head angles can vary by seed.
 
 ## Install
 
@@ -30,10 +42,10 @@ git clone https://github.com/yolain/ComfyUI-Easy-Use.git
 1. Install the packs listed in **Dependencies** and select your model files.
 2. Upload **Picture 1**. Describe the character in **BIND 1**.
 3. In **BIND 2**, match each active picture to its role.
-4. Set **CHOOSE SHEET** to **0-6**. Start with **0: five panels + full body**.
-5. Run. Inspect identity, profile, framing and clothing before keeping a sheet.
+4. Set **CHOOSE SHEET** to **0-7**. **7: four heads above front / top / rear body** is selected by default.
+5. Set **Canvas size → aspect_ratio** from the preset table, then run. Inspect identity, profile, framing and clothing before keeping a sheet.
 
-Read left to right. The seven editable sheet descriptions are below the main flow.
+Read left to right. The eight editable sheet descriptions are below the main flow.
 “Single image” means one output image; you can supply 1-9 references.
 
 ## Binding model - pictures are not subjects or output panels
@@ -43,7 +55,7 @@ Read left to right. The seven editable sheet descriptions are below the main flo
 
 **Picture 1-9** = the active uploaded reference images in list order.
 
-**Sheet index 0-6** = the desired output layout. It does not choose a reference.
+**Sheet index 0-7** = the desired output layout. It does not choose a reference.
 
 `H3Subjects → H3RefSlots → H3ImagePromptCompose`
 
@@ -70,7 +82,7 @@ Use current ComfyUI with native H3, Resolution Selector and Text (Multiline). No
 The README has exact filenames and folders. No weights or personal reference images are included. Upload placeholders must be replaced before running.
 
 ### Recipe
-2.5 MP / 21:9 / multiple 32; ER-SDE, simple, 5-25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.
+2.5 MP / 3:4 portrait (preset 7) / multiple 32; ER-SDE, simple, 5-25 steps, denoise 1; CFG 1; DMAD 0.8; sigma shift 16 / 2; hybrid AdaLN blocks 25-49; seed 42.
 
 Select the downloadable **stock Ref2VA overlay**. 
 
@@ -116,20 +128,22 @@ If the wrong face/outfit appears, compare the active image order with pic_N role
 
 ## 03 - choose the output character sheet
 
-### CHOOSE SHEET uses a zero-based index
-| Index | Output | Choose it for |
+### Sheet presets and recommended canvas ratios
+
+| Index | Output layout | Recommended aspect ratio setting |
 | --- | --- | --- |
-| **0** | 5 panels: four faces + full body | General-purpose reference; start here |
-| **1** | 7 panels: six faces + full body | Angles, smile/anger/sadness, and outfit |
-| **2** | 6 headshots, 2 × 3 | Face identity and expression coverage |
-| **3** | 5 panels: four faces + neck-to-feet | Larger body/clothing detail |
-| **4** | 2 headshots: front + profile | Simple likeness/profile check |
-| **5** | 3 columns: front + profile + body crop | Large views in one ultrawide row |
-| **6** | Free text (starts as one portrait) | A custom composition or quick portrait |
+| **0** | Four faces + full body | **21:9 (Ultrawide)** |
+| **1** | Six faces + full body | **21:9 (Ultrawide)** |
+| **2** | Six headshots / expressions | **3:2 (Photo)** |
+| **3** | Four faces + neck-to-feet crop | **21:9 (Ultrawide)** |
+| **4** | Front + profile headshots | **3:2 (Photo)** |
+| **5** | Three columns: front + profile + body crop | **21:9 (Ultrawide)** |
+| **6** | Free text / single portrait | **3:4 (Portrait Standard)**; for the default portrait |
+| **7** | Four heads above front crop + top-down + rear body | **3:4 (Portrait Standard)** |
 
-Only the selected description is used. Edit its matching numbered text node below. Values 7-9 have no template; use 0-6.
+Set **Canvas size → aspect_ratio** to the value above after choosing a preset. **Changing CHOOSE SHEET does not change the canvas automatically.** Keep megapixels at **2.5** and multiple at **32** as a starting point. Preset 6 is editable free text: use 3:4 for its default single portrait, or choose a ratio that fits your custom composition. The saved workflow selects preset 7 and 3:4 portrait.
 
-The saved canvas is 21:9. Try 3:2 for six heads, 2:3 for one portrait; keep 21:9 for the three-column template. Changing the index does NOT change resolution.
+Only the selected description is used. Edit its matching numbered text node below. Values 8-9 have no template; use 0-7.
 
 ## 04 - model setup
 
@@ -175,7 +189,7 @@ PNG files are written beneath `ComfyUI/output/h3_character_sheets/` and shown in
 
 Inspect **Final H3 prompt** after a run. Expect one subject_definitions section and one detailed_description section, with Picture tags matching your active inputs.
 
-Missing nodes: install all five packs and restart ComfyUI. Missing model: select an installed filename. Missing image: upload Picture 1 and every enabled optional image. Wrong layout: check sheet index 0-6 and the corresponding template.
+Missing nodes: install all five packs and restart ComfyUI. Missing model: select an installed filename. Missing image: upload Picture 1 and every enabled optional image. Wrong layout: check sheet index 0-7 and the corresponding template.
 
 Use plain text in descriptions. Avoid literal pipe characters: MMH3Tools treats a pipe as a separator between multiple prompts.
 

@@ -27,7 +27,8 @@
     "3": "Four headshots + neck-to-feet",
     "4": "Front + profile",
     "5": "Front + profile + body crop",
-    "6": "Single portrait"
+    "6": "Single portrait",
+    "7": "Four heads above front crop, top-down and rear body"
   },
   "samples": [
     {
@@ -199,6 +200,45 @@
       "reference_seed": 127110,
       "render_seconds": 35.78,
       "sha256": "d4ed5ae6714c7319f8da3f2784e29b095cfaa4d0e0a6f5926254faa34108e950"
+    },
+    {
+      "id": "11_lin_seven_view_turnaround",
+      "name": "Lin — seven-view turnaround",
+      "gender": "woman",
+      "layout": 7,
+      "aspect_ratio": "3:4 (Portrait Standard)",
+      "seed": 27111,
+      "description": "an original fictional 29-year-old East Asian woman with light olive skin, a softly square face, dark brown eyes, straight brows, a small straight nose and a neat black jaw-length bob with a blunt fringe. She has a compact athletic build. She wears a realistic fitted navy-blue astronaut flight jumpsuit with subtle pale teal piping, a small blank rectangular chest patch, a grey utility belt and grey flight boots. No helmet, no gloves, no insignia or lettering; her entire face is visible",
+      "layout_name": "Four heads above front crop, top-down and rear body",
+      "image": "sheets/11_lin_seven_view_turnaround.png",
+      "reference": "references/02_lin_orbital_pilot.png",
+      "width": 1408,
+      "height": 1856,
+      "reference_seed": 127102,
+      "render_seconds": 36.6,
+      "sha256": "5dfc8c83df7a203c2916168692b5e44cefb8635f5a5001cc6b3d4dc854ef9eb4",
+      "reference_sample_id": "02_lin_orbital_pilot",
+      "model_settings": [
+        "minimax_h3_fl2va_int8_convrot.safetensors",
+        "minimax_h3_ref2va_int8_convrot.safetensors",
+        "block_range_adaln",
+        25,
+        49,
+        false,
+        "",
+        "",
+        "default"
+      ],
+      "recipe": {
+        "megapixels": 2.5,
+        "steps": 25,
+        "sampler": "er_sde",
+        "scheduler": "simple",
+        "dmad_strength": 0.8,
+        "video_sigma_shift": 16,
+        "audio_sigma_shift": 2
+      },
+      "model_settings_note": "This sample uses the public stock Ref2VA overlay; its model_settings override the original batch defaults."
     }
   ]
 }
